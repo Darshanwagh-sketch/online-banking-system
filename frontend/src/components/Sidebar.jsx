@@ -16,15 +16,24 @@ const Sidebar = () => {
   return (
     <aside style={{
       width: '260px',
-      background: '#151D36',
+      background: 'rgba(15, 23, 42, 0.65)',
+      backdropFilter: 'blur(16px)',
+      WebkitBackdropFilter: 'blur(16px)',
       borderRight: '1px solid rgba(255, 255, 255, 0.08)',
-      padding: '1.5rem 1rem',
+      padding: '1.75rem 1rem',
       display: 'flex',
       flexDirection: 'column',
-      gap: '0.5rem',
+      gap: '0.6rem',
       flexShrink: 0
     }}>
-      <div style={{ padding: '0 0.75rem 1rem', fontSize: '0.75rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', letterSpacing: '1px' }}>
+      <div style={{
+        padding: '0 0.75rem 0.85rem',
+        fontSize: '0.72rem',
+        fontWeight: 800,
+        color: '#64748B',
+        textTransform: 'uppercase',
+        letterSpacing: '1.2px'
+      }}>
         Banking Menu
       </div>
       {navItems.map((item) => {
@@ -36,20 +45,28 @@ const Sidebar = () => {
             style={({ isActive }) => ({
               display: 'flex',
               alignItems: 'center',
-              gap: '0.85rem',
-              padding: '0.85rem 1rem',
-              borderRadius: '10px',
+              gap: '0.9rem',
+              padding: '0.85rem 1.1rem',
+              borderRadius: '12px',
               textDecoration: 'none',
-              fontSize: '0.9rem',
-              fontWeight: 600,
-              color: isActive ? '#3A86FF' : '#94A3B8',
-              background: isActive ? 'rgba(58, 134, 255, 0.12)' : 'transparent',
-              border: isActive ? '1px solid rgba(58, 134, 255, 0.3)' : '1px solid transparent',
-              transition: 'all 0.2s ease'
+              fontSize: '0.92rem',
+              fontWeight: isActive ? 700 : 600,
+              color: isActive ? '#00F5D4' : '#94A3B8',
+              background: isActive 
+                ? 'linear-gradient(135deg, rgba(58, 134, 255, 0.2) 0%, rgba(0, 245, 212, 0.12) 100%)' 
+                : 'transparent',
+              border: isActive ? '1px solid rgba(0, 245, 212, 0.4)' : '1px solid transparent',
+              boxShadow: isActive ? '0 0 15px rgba(58, 134, 255, 0.2)' : 'none',
+              transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
             })}
+            className="sidebar-item"
           >
-            <Icon size={18} />
-            {item.label}
+            {({ isActive }) => (
+              <>
+                <Icon size={19} color={isActive ? '#00F5D4' : '#94A3B8'} />
+                <span>{item.label}</span>
+              </>
+            )}
           </NavLink>
         );
       })}
@@ -58,3 +75,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
