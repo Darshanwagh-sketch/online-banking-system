@@ -95,12 +95,12 @@ const Dashboard = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       {/* Header Banner */}
       <div style={{
-        background: 'linear-gradient(135deg, rgba(28, 37, 65, 0.9) 0%, rgba(11, 19, 43, 0.95) 100%)',
+        background: 'linear-gradient(135deg, rgba(24, 24, 27, 0.95) 0%, rgba(9, 9, 11, 0.98) 100%)',
         backdropFilter: 'blur(20px)',
         padding: '2.2rem',
         borderRadius: '24px',
-        border: '1px solid rgba(58, 134, 255, 0.25)',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(58, 134, 255, 0.15)',
+        border: '1px solid rgba(255, 255, 255, 0.18)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 255, 0.08)',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -112,12 +112,12 @@ const Dashboard = () => {
             <span className="badge badge-success">
               <span className="pulse-dot"></span> Live Cloud Sync
             </span>
-            <span style={{ fontSize: '0.8rem', color: '#94A3B8' }}>• Connected to Aiven PostgreSQL</span>
+            <span style={{ fontSize: '0.8rem', color: '#A1A1AA' }}>• Connected to Aiven PostgreSQL</span>
           </div>
-          <h2 style={{ fontSize: '1.85rem', fontWeight: 800, color: '#F8FAFC', letterSpacing: '-0.5px' }}>
+          <h2 style={{ fontSize: '1.85rem', fontWeight: 900, color: '#FFFFFF', letterSpacing: '-0.5px' }}>
             Welcome back, {currentUser?.name}! 👋
           </h2>
-          <p style={{ color: '#94A3B8', marginTop: '0.3rem', fontSize: '0.95rem' }}>
+          <p style={{ color: '#A1A1AA', marginTop: '0.3rem', fontSize: '0.95rem' }}>
             Here is your live real-time financial portfolio overview.
           </p>
         </div>
@@ -130,11 +130,11 @@ const Dashboard = () => {
         <div style={{
           padding: '1.1rem 1.4rem',
           borderRadius: '14px',
-          background: msg.isError ? 'rgba(239, 68, 68, 0.15)' : 'rgba(16, 185, 129, 0.15)',
-          border: msg.isError ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid rgba(16, 185, 129, 0.4)',
-          color: msg.isError ? '#F87171' : '#34D399',
+          background: msg.isError ? 'rgba(239, 68, 68, 0.15)' : 'rgba(255, 255, 255, 0.1)',
+          border: msg.isError ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid rgba(255, 255, 255, 0.3)',
+          color: msg.isError ? '#F87171' : '#FFFFFF',
           fontWeight: 700,
-          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5)',
           display: 'flex',
           alignItems: 'center',
           gap: '0.75rem',
@@ -149,56 +149,55 @@ const Dashboard = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '1.5rem' }}>
         {/* Total Balance Card */}
         <div className="card card-hover glow-card" style={{
-          background: 'linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%)',
+          background: 'linear-gradient(135deg, rgba(24, 24, 27, 0.9) 0%, rgba(9, 9, 11, 0.95) 100%)',
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          border: '1px solid rgba(255, 255, 255, 0.18)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ color: '#94A3B8', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+            <span style={{ color: '#A1A1AA', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
               Total Net Balance
             </span>
-            <div style={{ padding: '0.5rem', borderRadius: '12px', background: 'rgba(58, 134, 255, 0.15)' }}>
-              <Wallet color="#3A86FF" size={24} />
+            <div style={{ padding: '0.5rem', borderRadius: '12px', background: '#FFFFFF' }}>
+              <Wallet color="#000000" size={22} />
             </div>
           </div>
           <div style={{
             fontSize: '2.6rem',
-            fontWeight: 800,
-            background: 'linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            fontWeight: 900,
+            color: '#FFFFFF',
             margin: '1rem 0'
           }}>
             ₹ {totalBalance.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: '#34D399', fontWeight: 700 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: '#FFFFFF', fontWeight: 700 }}>
             <span className="pulse-dot"></span> Available in {accounts.length} active account(s)
           </div>
         </div>
 
         {/* Primary Account Card */}
-        <div className="card card-hover glow-card">
+        <div className="card card-hover glow-card" style={{ border: '1px solid rgba(255, 255, 255, 0.18)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ color: '#94A3B8', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+            <span style={{ color: '#A1A1AA', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
               Primary Account
             </span>
-            <div style={{ padding: '0.5rem', borderRadius: '12px', background: 'rgba(0, 245, 212, 0.15)' }}>
-              <CreditCard color="#00F5D4" size={24} />
+            <div style={{ padding: '0.5rem', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+              <CreditCard color="#FFFFFF" size={22} />
             </div>
           </div>
-          <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#F8FAFC', margin: '0.85rem 0 0.35rem', letterSpacing: '1px' }}>
+          <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#FFFFFF', margin: '0.85rem 0 0.35rem', letterSpacing: '1px' }}>
             {primaryAccount.accountNumber || 'ACC-8849-XXXX'}
           </div>
-          <div style={{ color: '#94A3B8', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
-            <span>Type: <strong style={{ color: '#3A86FF' }}>{primaryAccount.accountType || 'SAVINGS'}</strong></span>
+          <div style={{ color: '#A1A1AA', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+            <span>Type: <strong style={{ color: '#FFFFFF' }}>{primaryAccount.accountType || 'SAVINGS'}</strong></span>
             <span>•</span>
             <span className="badge badge-success"><span className="pulse-dot"></span> {primaryAccount.status || 'ACTIVE'}</span>
           </div>
         </div>
 
         {/* Quick Actions Card */}
-        <div className="card glow-card" style={{ display: 'flex', flexDirection: 'column', justify: 'center', gap: '0.85rem' }}>
-          <span style={{ color: '#94A3B8', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+        <div className="card glow-card" style={{ display: 'flex', flexDirection: 'column', justify: 'center', gap: '0.85rem', border: '1px solid rgba(255, 255, 255, 0.18)' }}>
+          <span style={{ color: '#A1A1AA', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.8px' }}>
             Quick Actions
           </span>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
@@ -218,13 +217,13 @@ const Dashboard = () => {
       </div>
 
       {/* Recent Transactions Table */}
-      <div className="card">
+      <div className="card" style={{ border: '1px solid rgba(255, 255, 255, 0.18)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <ShieldCheck size={20} color="#3A86FF" />
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#F8FAFC' }}>Recent Transactions</h3>
+            <ShieldCheck size={20} color="#FFFFFF" />
+            <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: '#FFFFFF' }}>Recent Transactions</h3>
           </div>
-          <Link to="/customer/transactions" style={{ color: '#00F5D4', fontSize: '0.88rem', fontWeight: 700, textDecoration: 'none' }} className="card-hover">
+          <Link to="/customer/transactions" style={{ color: '#FFFFFF', fontSize: '0.88rem', fontWeight: 800, textDecoration: 'none' }} className="card-hover">
             View All →
           </Link>
         </div>
@@ -244,25 +243,25 @@ const Dashboard = () => {
             <tbody>
               {transactions.length === 0 ? (
                 <tr>
-                  <td colSpan="6" style={{ textAlign: 'center', color: '#94A3B8', padding: '2.5rem' }}>
+                  <td colSpan="6" style={{ textAlign: 'center', color: '#A1A1AA', padding: '2.5rem' }}>
                     No transactions found. Deposit or transfer money to get started!
                   </td>
                 </tr>
               ) : (
                 transactions.map((tx) => (
                   <tr key={tx.id}>
-                    <td style={{ fontWeight: 800, color: '#3A86FF', letterSpacing: '0.5px' }}>{tx.transactionReference}</td>
+                    <td style={{ fontWeight: 800, color: '#FFFFFF', letterSpacing: '0.5px' }}>{tx.transactionReference}</td>
                     <td>
                       <span className={`badge ${tx.transactionType === 'DEPOSIT' ? 'badge-success' : tx.transactionType === 'WITHDRAWAL' ? 'badge-danger' : 'badge-warning'}`}>
                         {tx.transactionType}
                       </span>
                     </td>
                     <td style={{ fontWeight: 600 }}>{tx.description}</td>
-                    <td style={{ fontWeight: 800, fontSize: '0.98rem', color: tx.transactionType === 'DEPOSIT' ? '#34D399' : '#F87171' }}>
+                    <td style={{ fontWeight: 900, fontSize: '0.98rem', color: tx.transactionType === 'DEPOSIT' ? '#FFFFFF' : '#F87171' }}>
                       {tx.transactionType === 'DEPOSIT' ? '+' : '-'} ₹{parseFloat(tx.amount).toFixed(2)}
                     </td>
                     <td><span className="badge badge-success"><span className="pulse-dot"></span> {tx.status}</span></td>
-                    <td style={{ color: '#94A3B8', fontSize: '0.82rem', fontWeight: 600 }}>{new Date(tx.createdAt).toLocaleDateString()}</td>
+                    <td style={{ color: '#A1A1AA', fontSize: '0.82rem', fontWeight: 600 }}>{new Date(tx.createdAt).toLocaleDateString()}</td>
                   </tr>
                 ))
               )}
