@@ -26,11 +26,6 @@ const Login = () => {
     }
   };
 
-  const fillDemoUser = (demoEmail, demoPassword) => {
-    setEmail(demoEmail);
-    setPassword(demoPassword);
-  };
-
   return (
     <div style={{
       minHeight: '100vh',
@@ -97,29 +92,8 @@ const Login = () => {
             </button>
           </form>
 
-          {/* Demo User Shortcuts */}
-          <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748B', textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem', textAlign: 'center' }}>
-              Quick Demo Login
-            </span>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-              <button onClick={() => fillDemoUser('customer@securebank.com', 'Customer@1234')} className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.4rem' }}>
-                Customer Demo
-              </button>
-              <button onClick={() => fillDemoUser('staff@securebank.com', 'Staff@1234')} className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.4rem' }}>
-                Staff Demo
-              </button>
-              <button onClick={() => fillDemoUser('manager@securebank.com', 'Manager@1234')} className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.4rem' }}>
-                Manager Demo
-              </button>
-              <button onClick={() => fillDemoUser('admin@securebank.com', 'Admin@1234')} className="btn btn-secondary" style={{ fontSize: '0.75rem', padding: '0.4rem' }}>
-                Admin Demo
-              </button>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '1.5rem', textAlign: 'center', fontSize: '0.88rem', color: '#94A3B8' }}>
-            Don't have a banking account? <Link to="/register" style={{ color: '#3A86FF', fontWeight: 700, textDecoration: 'none' }}>Register here</Link>
+          <div style={{ marginTop: '1.5rem', textAlign: 'center', fontSize: '0.88rem', color: '#A1A1AA' }}>
+            Don't have a banking account? <Link to="/register" style={{ color: '#FFFFFF', fontWeight: 800, textDecoration: 'underline' }}>Register here</Link>
           </div>
         </div>
       </div>
